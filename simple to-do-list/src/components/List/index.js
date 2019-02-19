@@ -19,8 +19,6 @@ class List extends PureComponent {
 
   deletePlan = (i) => {
 
-    console.log("DASHLA I SUDA");
-
     var arr = this.state.arrayOfPlans;
     arr[i] = null;
 
@@ -33,7 +31,6 @@ class List extends PureComponent {
   };
 
   checkChange = (i , boolStateCheck) => {
-    console.log("POMENYAT' SOSTOYANIE CHECKED-A tut: ", i, "на", boolStateCheck);
 
     var arr = this.state.arrayOfPlans.slice();
 
@@ -46,10 +43,9 @@ class List extends PureComponent {
   };
 
   deleteAll = () => {
-    console.log('DELETE ALL');
 
     var arr = this.state.arrayOfPlans;
-    arr.splice(0,arr.length);                    // ПОЧЕМУ-ТО РАБОТАЕТ ТОЛЬКО ТОГДА, КОГДА МЫ ПО ССЫЛКЕ ИЗМЕНЯЕМ МАССИВ!
+    arr.splice(0,arr.length);
 
     this.setState ({
       arrayOfPlans: arr
@@ -87,10 +83,6 @@ class List extends PureComponent {
 
   render() {
 
-
-    console.log("Nachalsya rendering");
-
-
     return (
         <div className="container">
           <h1 className="text-center">To-Do-List Application</h1>
@@ -120,7 +112,6 @@ class List extends PureComponent {
               : this.state.arrayOfPlans.map (this.eachPlans)
           }
 
-
         </div>
     );
 
@@ -128,28 +119,18 @@ class List extends PureComponent {
 
 
   handleClick = () => {
-    console.log('kek lol mda');
-
     this.setState({
       isFormOpen: !this.state.isFormOpen
     })
-
   };
 
 
   submitForm = (plan, descrPlan, stateCheck) => {
 
-
     this.setState({
-
       isFormOpen: !this.state.isFormOpen
-
     });
 
-    console.log('PRISHLO : ' , plan, " and ", descrPlan);
-
-    // я походу по ссылке добавляю в массив СУКА, а нужно было копировать
-    // Вообще неправильно делаю! нужно изменяь в setState , а не по сслыке
     let array = this.state.arrayOfPlans;
     array = array.push({plan, descrPlan, stateCheck});
 

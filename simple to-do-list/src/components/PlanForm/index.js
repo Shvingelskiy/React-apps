@@ -13,9 +13,7 @@ class PlanForm extends Component {
     };
   }
 
-
-
-
+  
   render() {
 
     return (
@@ -26,7 +24,6 @@ class PlanForm extends Component {
 
           <button  onClick={() => {
             this.props.deletePlan(this.props.index);
-            console.log('funkciya zapustilas')
             }}
             className="btn btn-warning button-del">
             Delete
@@ -37,7 +34,6 @@ class PlanForm extends Component {
                    type="checkbox" value=""
                    id="defaultCheck1"
                    onClick={() => {
-                     console.log('funkciya PEREMEN');
                      this.setState({
                        isCheckBoxClicked : !this.state.isCheckBoxClicked
                      });
@@ -54,9 +50,7 @@ class PlanForm extends Component {
     this.props.checkChange(this.props.index , this.state.isCheckBoxClicked);
   }
 
-
 }
-
 
 
 

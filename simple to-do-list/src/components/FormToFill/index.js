@@ -36,7 +36,6 @@ class FormToFill extends Component {
 
   submitForm = () => {
     if (this.state.plan === '' || this.state.descrOfPlan === '') {
-      console.log("NIHUYA");
       return;
     }
 
