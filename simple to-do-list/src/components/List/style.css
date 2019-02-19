@@ -1,0 +1,19 @@
+.plan-list__li{
+  list-style: none;
+}
+
+.first-button{
+  float: left;
+  margin-left: 400px;
+}
+
+.second-button{
+  display: inline-block;
+
+  margin-left: 120px;
+
+}
+
+.button-list{
+  margin-top: 50px;
+}
